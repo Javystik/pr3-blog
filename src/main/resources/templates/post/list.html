@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Posts List</title>
+</head>
+<body>
+<h1>Posts List</h1>
+<a href="/posts/new">Add New Post</a>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Actions</th>
+    </tr>
+    <th:block th:each="post : ${posts}">
+        <tr>
+            <td th:text="${post.title}"></td>
+            <td>
+                <a th:href="@{/posts/{slug}(slug=${post.slug})}">View</a>
+                <a th:href="@{/posts/edit/{slug}(slug=${post.slug})}">Edit</a>
+                <a th:href="@{/posts/delete/{slug}(slug=${post.slug})}">Delete</a>
+            </td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

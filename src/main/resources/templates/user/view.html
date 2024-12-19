@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Details</title>
+</head>
+<body>
+<h1>User Details</h1>
+<p th:text="'ID: ' + ${user.id}"></p>
+<p th:text="'Name: ' + ${user.name}"></p>
+<a href="/users">Back to Users List</a>
+</body>
+</html>
